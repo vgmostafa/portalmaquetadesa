@@ -1,0 +1,10 @@
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.csprojAssemblyReference.cache
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.RazorAssemblyInfo.cache
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.RazorAssemblyInfo.cs
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.AssemblyInfoInputs.cache
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.AssemblyInfo.cs
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.TagHelpers.input.cache
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.TagHelpers.output.cache
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.dll
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.pdb
+C:\Fuentes\PortalDiagnostico\PortalDiagnostico\PortalDiagnosticoTecnico\obj\Debug\netcoreapp2.1\PortalDiagnosticoTecnico.RazorCoreGenerate.cache

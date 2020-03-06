@@ -1,0 +1,686 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/css/Index.css" rel="stylesheet" />
+
+@*LOADING*@
+<div id='divEsperando' class='row d-none' style='margin-top: 100px; margin-left: 100px'>
+    <div class='col-12'>
+        <img src='~/Files/wait1.gif' style='width: 48px; height: 48px' alt='' />
+    </div>
+    <div class='col-12 usaDetalle'>
+        <span>Conectando a SMP...</span>
+    </div>
+</div>
+
+<div style='margin-left: 15px; padding-top: 10px; width: 100%; display: flex'>
+    <div class='col-3 elBorde elSidebar laSombra content-menu d-none shadow-custom' id='sidebarExpandido'>
+        <div style='width: 100%; display: flex'>
+            <div style='width: 90%; float: left'>
+                <span class='usaSubtitulo'>Estado de Red</span>
+            </div>
+            <div style='width: 10%; float: left' align="right">
+                <img src='~/Files/pin.png' alt='' style='width: 24px; height: 24px; cursor: pointer'
+                     onclick="rearmarPantalla('reducido')" />
+            </div>
+        </div>
+
+        <div class="d-inline-block" style='width: 100%;'>
+            <div style='width: 75%; float: left; display: flex; align-items: center; height: 40px'>
+                <span id='spanRed' class='usaDetalle' style='padding-left: 10px;'>
+                    Sin fallas de red
+                    reportadas
+                </span>
+            </div>
+            <div style='width: 25%; float: left; display: flex; align-items: center; justify-content: center;
+                    height: 40px'>
+                <img id='imRed' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+            </div>
+        </div>
+
+        <div class="d-inline-block" style='width: 100%'>
+            <div style='width: 75%; float: left; display: flex; align-items: center; height: 40px'>
+                <span class='usaSubtitulo'>Estado de Servicios</span>
+            </div>
+            <div style='width: 25%; float: left; display: flex; align-items: center; justify-content: center;
+                    height: 40px'>
+                <img id='imgServicios' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+            </div>
+        </div>
+
+        <div style='height: 2px; display: flex; float: left; margin-bottom: 5px;' class='elFondo w-100'>
+
+        </div>
+
+        @************* Video **********@
+        <div class='submenu video_padre d-inline-block w-100'>
+            <div class="d-inline-block" style='width: 100%'>
+                <div style='width: 75%; float: left; display: flex; align-items: center; height: 40px'>
+                    <div style='float: left'>
+                        <img src="~/Files/Camera-white.png" height="24" alt="Alternate Text" />
+                    </div>
+                    <div style='float: left; display: flex; align-items: center; justify-content: center;
+                            height: 40px'>
+                        <span class='usaSubtitulo'>Video</span>
+                    </div>
+                </div>
+                <div style='width: 25%; float: left; display: flex; align-items: center; justify-content: center;
+                        height: 40px'>
+                    <img id='imgVideo' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+                </div>
+            </div>
+
+            <div id='tablaVideo' class='usaDetalle video_hijo d-none' style='margin-left: 3rem'>
+                <div onclick="llave_video=1" class="btn-center-vertical" style='width: 100%; display: flex'>
+                    <div style='float: left; width: 40%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Flow
+                    </div>
+                    <div style='float: left; width: 60%'>
+                        <img id='imgVideoFlow' src='~/Files/iconVerde.png' class='boton_chico' alt='' />
+                    </div>
+                </div>
+                <div id='divHijoFlow' class='usaDetalle esHijo' style='margin-left: 1.3rem'>
+                    <div class='col-12 usaSubtitulo'>
+                        Datos Generales
+                    </div>
+                    <div class='row col-12'>
+                        <div class='col-4 text-right'>
+                            Serial:
+                        </div>
+                        <div class='col-4 text-left'>
+                            552152729
+                        </div>
+                    </div>
+                    <div class='row col-12'>
+                        <div class='col-4 text-right'>
+                            MAC:
+                        </div>
+                        <div class='col-4 text-left'>
+                            00:1d:e5:55:1e:0a
+                        </div>
+                    </div>
+                    <div class='row col-12'>
+                        <div class='col-4 text-right'>
+                            Port US:
+                        </div>
+                        <div class='col-4 text-left'>
+                            u2/w2
+                        </div>
+                    </div>
+                    <div class='col-12 usaSubtitulo'>
+                        &nbsp;
+                    </div>
+                    <div class='col-12 usaSubtitulo'>
+                        Flujo de Trabajo de Flow
+                    </div>
+                    <div class='col-12 usaSubtitulo'>
+                        &nbsp;
+                    </div>
+                    <div class='col-12 usaDetalle' onclick="ejecutar('adm_wifi')" style='cursor: pointer'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Administración de Flow
+                    </div>
+                </div>
+                <div onclick="llave_video=2" style='width: 100%; display: flex' class="btn-center-vertical">
+                    <div style='float: left; width: 40%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Flow App
+                    </div>
+                    <div style='float: left; width: 60%'>
+                        <img id='imgVideoFlowApp' src='~/Files/iconVerde.png' class='boton_chico' style='margin-top: -3px'
+                             alt='' />
+                    </div>
+                </div>
+                <div id='divHijoFlowApp' class='usaDetalle esHijo' style='margin-left: 1.3rem'>
+                    <div class='col-12 usaSubtitulo'>
+                        Datos Generales
+                    </div>
+                    <div class='row col-12'>
+                        <div class='col-4 text-right'>
+                            Serial:
+                        </div>
+                        <div class='col-4 text-left'>
+                            552152729
+                        </div>
+                    </div>
+                    <div class='row col-12'>
+                        <div class='col-4 text-right'>
+                            MAC:
+                        </div>
+                        <div class='col-4 text-left'>
+                            00:1d:e5:55:1e:0a
+                        </div>
+                    </div>
+                    <div class='row col-12'>
+                        <div class='col-4 text-right'>
+                            Port US:
+                        </div>
+                        <div class='col-4 text-left'>
+                            u2/w2
+                        </div>
+                    </div>
+                    <div class='col-12 usaSubtitulo'>
+                        &nbsp;
+                    </div>
+                    <div class='col-12 usaSubtitulo'>
+                        Flujo de Trabajo de Flow
+                    </div>
+                    <div class='col-12 usaSubtitulo'>
+                        &nbsp;
+                    </div>
+                    <div class='col-12 usaDetalle' onclick="ejecutar('adm_wifi')" style='cursor: pointer'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Administración de Flow App
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @************* Internet **********@
+        <div class='submenu internet_padre d-inline-block w-100'>
+            <div style='width: 100%'>
+                <div style='width: 75%; float: left; display: flex; align-items: center; height: 40px'>
+                    <div style='float: left'>
+                        <img src="~/Files/Internet-white.png" height="24" alt="Alternate Text" />
+                    </div>
+                    <div style='float: left; height: 1.5rem'>
+                        <span class='usaSubtitulo'>Internet</span>
+                    </div>
+                </div>
+                <div style='width: 25%; float: left; display: flex; align-items: center; justify-content: center;
+                        height: 40px'>
+                    <img id='imgInternet' src='~/Files/iconRojo.png' class='boton_grande' alt='' />
+                </div>
+            </div>
+
+            <div id='tablaInternet' class='usaDetalle internet_hijo d-none' style='margin-left: 3rem'>
+                <div onclick="llave_internet=1" style='width: 100%; display: flex' class="btn-center-vertical">
+                    <div style='float: left; width: 50%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Sagem SG3838
+                    </div>
+                    <div style='float: left; width: 50%'>
+                        <img id='imgInternetSagem' src='~/Files/iconRojo.png' class='boton_chico' style='margin-top: -3px'
+                             alt='' />
+                    </div>
+                </div>
+                <div id='divHijoInternetSagem' class='usaDetalle esHijo'>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Serial:
+                        </div>
+                        <div class='col-7 text-left'>
+                            434234434
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            MAC:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            00:1d:d5:69:1e:08
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Config:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            d11_2g3848v2.cm
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Ver HW:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            2
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Estado CM:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            Registrado
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Port US:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            3/3
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        &nbsp;
+                    </div>
+                    <div class='align-items-center'>
+                        <div class='usaSubtitulo' style='display: flex; width: 100%'>
+                            Flujo de Trabajo de Internet
+                        </div>
+                        <div style='display: flex; width: 100%'>
+                            &nbsp;
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('firmware')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Administrador de Firmware
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('stbip_auto')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Flujo de Resolución de Problemas STBIP (automático)
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('reinicio')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Reinicio
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('reinicio_fabrica')" style='width: 100%;
+                                padding-left: 0.5rem; cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Reinicio a Valores de Fábrica
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('general')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Información General
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('stbip_trouble')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            STBIP_troubleshoooting
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('test_velocidad')" style='width: 100%;
+                                padding-left: 0.5rem; cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Test de velocidad
+                        </div>
+                        <div style='width: 100%'>
+                            &nbsp;
+                        </div>
+                        <div class='usaSubtitulo' style='display: flex; width: 100%'>
+                            Docsis
+                        </div>
+                        <div style='width: 100%'>
+                            &nbsp;
+                        </div>
+                        <div class=' usaDetalle' onclick="ejecutar('adm_Docis')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Docsis
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        &nbsp;
+                    </div>
+                </div>
+                <div onclick="llave_internet=2" style='width: 100%; display: flex' class="btn-center-vertical">
+                    <div style='float: left; width: 50%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Huawei HG8245U
+                    </div>
+                    <div style='float: left; width: 50%'>
+                        <img id='imgInternetHuawei' src='~/Files/iconVerde.png' class='boton_chico' style='margin-top: -3px'
+                             alt='' />
+                    </div>
+                </div>
+                <div id='divHijoInternetHuawei' class='usaDetalle esHijo'>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Serial:
+                        </div>
+                        <div class='col-7 text-left'>
+                            434234434
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            MAC:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            00:1d:d5:69:1e:08
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Config:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            d11_2g3848v2.cm
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Ver HW:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            2
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Estado CM:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            Registrado
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        <div class='text-right' style='width: 25%'>
+                            Port US:
+                        </div>
+                        <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                            3/3
+                        </div>
+                    </div>
+                    <div style='display: flex; width: 100%;'>
+                        &nbsp;
+                    </div>
+                    <div class='align-items-center'>
+                        <div class='usaSubtitulo' style='display: flex; width: 100%'>
+                            Flujo de Trabajo de Huawei
+                        </div>
+                        <div style='display: flex; width: 100%;'>
+                            &nbsp;
+                        </div>
+                        <div class='usaDetalle' onclick="ejecutar('adm_Huawei')" style='width: 100%; padding-left: 0.5rem;
+                                cursor: pointer'>
+                            <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                            Administración de HUAWEI
+                        </div>
+                        <div style='display: flex; width: 100%;'>
+                            &nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div onclick="llave_internet=3" style='width: 100%; display: flex' class="btn-center-vertical">
+                    <div style='float: left; width: 50%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Wifi
+                    </div>
+                    <div style='float: left; width: 50%'>
+                        <img id='imgWifi' src='~/Files/iconVerde.png' class='boton_chico' style='margin-top: -3px'
+                             alt='' />
+                    </div>
+                </div>
+                <div id='divHijoInternetWifi' class='usaDetalle esHijo' style='display: flex;
+                        width: 100%;'>
+                    <div class='usaSubtitulo' style='width: 100%'>
+                        Flujo de Trabajo de Wifi
+                    </div>
+                    <div style='width: 100%;'>
+                        &nbsp;
+                    </div>
+                    <div class='usaDetalle' onclick="ejecutar('adm_wifi')" style='width: 100%; padding-left: 0.5rem;
+                            cursor: pointer'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        Administración de WIFI
+                    </div>
+                    <div style='width: 100%;'>
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @************* Telefonia **********@
+        <div class='submenu telefonia_padre d-inline-block w-100'>
+            <div class="d-inline-block" style='width: 100%;' onclick="llave_telefonia=1">
+                <div style='width: 75%; float: left; display: flex; align-items: center; height: 40px'>
+                    <div style='float: left'>
+                        <img src="~/Files/Phone-white.png" height="25" alt="Alternate Text" />
+                    </div>
+                    <div style='float: left'>
+                        <span class='usaSubtitulo'>Telefonía</span>
+                    </div>
+                </div>
+                <div style='width: 25%; float: left; display: flex; align-items: center; justify-content: center;
+                        height: 40px' align="right">
+                    <img id='imgTelefonia' src='~/Files/iconRojo.png' class='boton_grande' alt='' />
+                </div>
+            </div>
+
+            <div class='usaDetalle telefonia_hijo d-none' style='margin-left: 3rem'>
+                <div onclick="llave_telefonia=2" style='width: 100%; display: flex' class="btn-center-vertical">
+                    <div style='width: 50%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        (011) 4968-7200
+                    </div>
+                    <div style='width: 50%;'>
+                        <img id='imgTelefoniaLinea' src='~/Files/iconVerde.png' class='boton_chico' style='margin-top: -3px'
+                             alt='' />
+                    </div>
+                </div>
+            </div>
+
+            <div id='divHijoTelefonia' class='usaDetalle esHijo d-none' style='margin-left: 3rem'>
+                <div style='display: flex; width: 100%;'>
+                    <div class='text-right' style='width: 25%'>
+                        Línea
+                    </div>
+                    <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                        11 4968-7200
+                    </div>
+                </div>
+                <div style='display: flex; width: 100%;'>
+                    <div class='text-right' style='width: 25%'>
+                        IMSI:
+                    </div>
+                    <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                        552152729
+                    </div>
+                </div>
+                <div style='display: flex; width: 100%;'>
+                    <div class='text-right' style='width: 25%'>
+                        Roaming:
+                    </div>
+                    <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                        No
+                    </div>
+                </div>
+                <div style='width: 100%;'>
+                    &nbsp;
+                </div>
+                <div class='usaSubtitulo' style='width: 100%'>
+                    Flujo de Trabajo de Telefonía
+                </div>
+                <div style='width: 100%'>
+                    &nbsp;
+                </div>
+                <div class='usaDetalle' onclick="ejecutar('adm_wifi')" style='width: 100%; padding-left: 0.5rem;
+                        cursor: pointer'>
+                    <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                    Diagnóstico de Telefonìa
+                </div>
+                <div style='width: 100%;'>
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+
+        @************* Telefonia Móvil **********@
+        <div class='submenu telefoniaMovil_padre d-inline-block w-100'>
+            <div class="d-inline-block" style='width: 100%' onclick="llave_telefoniaMovil=1">
+                <div style='width: 75%; float: left; display: flex; align-items: center; height: 40px'>
+                    <div style='float: left'>
+                        <img src="~/Files/Mobilphone-white.png" height="24" alt="Alternate Text" />
+                    </div>
+                    <div style='float: left;'>
+                        <span class='usaSubtitulo'>Telefonía Móvil</span>
+                    </div>
+                </div>
+                <div style='width: 25%; float: left; display: flex; align-items: center; justify-content: center;
+                        height: 40px' align="right">
+                    <img id='imgTelefoniaMovil' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+                </div>
+            </div>
+
+            <div class='usaDetalle telefoniaMovil_hijo d-none' style='margin-left: 3rem'>
+                <div onclick="llave_telefoniaMovil=2" style='width: 100%; display: flex' class="btn-center-vertical">
+                    <div style='width: 50%'>
+                        <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                        (15) 6859-1445
+                    </div>
+                    <div style='width: 50%;'>
+                        <img id='imgTelefoniaLineaMovil' src='~/Files/iconVerde.png' class='boton_chico' style='margin-top: -3px'
+                             alt='' />
+                    </div>
+                </div>
+            </div>
+
+            <div id='divHijoTelefoniaMovil' class='usaDetalle esHijo d-none' style='margin-left: 3rem'>
+                <div style='display: flex; width: 100%;'>
+                    <div class='text-right' style='width: 25%'>
+                        Línea
+                    </div>
+                    <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                        11 4968-7200
+                    </div>
+                </div>
+                <div style='display: flex; width: 100%;'>
+                    <div class='text-right' style='width: 25%'>
+                        IMSI:
+                    </div>
+                    <div class='text-left' style='width: 70%; padding-left: 1rem'>
+                        742156424
+                    </div>
+                </div>
+                <div style='width: 100%;'>
+                    &nbsp;
+                </div>
+                <div class='usaSubtitulo' style='width: 100%'>
+                    Flujo de Trabajo de Telefonía Móvil
+                </div>
+                <div style='width: 100%'>
+                    &nbsp;
+                </div>
+                <div class='usaDetalle' onclick="ejecutar('telefoniaMovil')" style='width: 100%;
+                        padding-left: 0.5rem; cursor: pointer'>
+                    <img src="~/Files/Row-right.png" height="12" alt="Alternate Text" />
+                    Diagnóstico de Telefonìa Móvil
+                </div>
+                <div style='width: 100%;'>
+                    &nbsp;
+                </div>
+            </div>
+        </div>
+        <div style='width: 100%; height: 2px; display: flex; float: left' class='elFondo'>
+        </div>
+    </div>
+
+    @********* Sidebar Reducido **********@
+    <div class='col-1 shadow-custom elBorde elSidebar usaDetalle laSombra d-none' style='width: 100%; padding-bottom: 20px;' id='sidebarReducido'>
+        <div style='width: 100%' align="right">
+            <img src='~/Files/pin.png' alt='' style='width: 20px; height: 20px; cursor: pointer'
+                 class='rotateAbajo' onclick="rearmarPantalla('expandido')" />
+        </div>
+        <div style='width: 100%; display: flex'>
+            <div style='width: 60%; float: left; padding-top: 15px'>
+                <span>Red</span>
+            </div>
+            <div style='width: 20%; float: left'>
+                <img id='imgReducidoRed' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+            </div>
+        </div>
+        <div style='width: 100%; display: flex'>
+            <div style='width: 60%; float: left; padding-top: 15px'>
+                <span>Servicios</span>
+            </div>
+            <div style='width: 20%; float: left'>
+                <img id='imgReducidoServicios' src='~/Files/iconRojo.png' class='boton_grande' alt='' />
+            </div>
+        </div>
+        <div style='width: 100%; height: 3px' class='elFondo'>
+            &nbsp;
+        </div>
+        <div style='width: 60%; float: left; padding-top: 12px'>
+            @*<%-- Video --%>*@
+            <img src="~/Files/Camera-white.png" height="22" alt="Alternate Text" onclick="rearmarPantalla('expandidoVideo')" />
+        </div>
+        <div style='width: 20%; float: left'>
+            <img id='imgReducidoVideo' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+        </div>
+        <div style='width: 60%; float: left; padding-top: 12px'>
+            @*<%--Internet --%>*@
+            @*<i class="material-icons usaColorIconos" style='font-size: 1.5rem; cursor: pointer'
+               onclick="rearmarPantalla('expandidoInternet')">&#xe894;</i>*@
+            <img src="~/Files/Internet-white.png" height="22" alt="Alternate Text" onclick="rearmarPantalla('expandidoInternet')" />
+        </div>
+        <div style='width: 20%; float: left'>
+            <img id='imgReducidoInternet' src='~/Files/iconRojo.png' class='boton_grande' alt='' />
+        </div>
+        <div style='width: 60%; float: left; padding-top: 12px'>
+            @*<%--Telefonía --%>*@
+            @*<i class="material-icons usaColorIconos" style='font-size: 1.5rem; cursor: pointer'
+               onclick="rearmarPantalla('expandidoTelefonia')">&#xe0cd;</i>*@
+            <img src="~/Files/Phone-white.png" height="22" alt="Alternate Text" onclick="rearmarPantalla('expandidoTelefonia')" />
+        </div>
+        <div style='width: 20%; float: left'>
+            <img id='imgReducidoTelefonia' src='~/Files/iconVerde.png' class='boton_grande' alt='' />
+        </div>
+        <div style='width: 60%; float: left; padding-top: 12px'>
+            @*<%--Telefonía Móvil --%>*@
+            @*<i class="material-icons usaColorIconos" style='font-size: 1.5rem; cursor: pointer'
+               onclick="rearmarPantalla('expandidoTelefoniaMovil')">&#xe0d6;</i>*@
+            <img src="~/Files/Mobilphone-white.png" height="22" alt="Alternate Text" onclick="rearmarPantalla('expandidoTelefoniaMovil')" />
+        </div>
+        <div style='width: 20%; float: left'>
+            <img id='imgReducidoTelefoniaMovil' src='~/Files/iconVerde.png' class='boton_grande'
+                 alt='' />
+        </div>
+        <div style='width: 100%; float: left; height: 3px' class='elFondo'>
+        </div>
+    </div>
+    @*<%--****** Fin Sidebar Reducido *******--%>*@
+    <div class='col-9' id='divFrame'>
+        <div id="divFrame-content" class="mb-5 shadow-custom">
+            
+        </div>
+        <iframe src="" style="width: 100%; height: 100%; border: none" id="el_iframe" name="el_iframe" class='d-none elBordeChico shadow-custom background-custom'>
+
+        </iframe>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="idModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class=" row col-12">
+                    <div class=" col-6">
+                        <input type="text" class="form-control " id="txtDNI" placeholder="dni" />
+                    </div>
+                    <div class=" col-6">
+                        <button type="button" class="btn btn-primary btn-sm" onclick="ObtenerDatosCliente()">
+                            Datos Cliente
+                        </button>
+                    </div>
+                </div>
+                <div class=" row col-12">
+                    <span id="datos"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary btn-sm" onclick="ActualizarEstado()">
+                    Seleccionar
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal" id="btn-close-modal">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/Index.js"></script>

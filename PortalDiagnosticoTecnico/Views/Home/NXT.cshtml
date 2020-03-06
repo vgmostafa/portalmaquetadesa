@@ -1,0 +1,215 @@
+﻿<div class='container'>
+    <div id='lineaEnBlanco1'>
+        <br />
+    </div>
+    <div class="card offset-2 col-8" style='border: 1px solid #B0B0B0; padding: 0'>
+        <div class='card-body' style='padding: 0'>
+            <div id='card-body-normal'>
+                <div class='text-center'>
+                    @*<span id='tituloPrincipal' style='font-size:1.5rem'></span>*@
+                </div>
+                <br />
+                <div class="form-row center">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-10">
+                        <label id="lblMensaje" style="width: 100%" runat="server">
+                        </label>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+
+                <div class='row col-12'>
+                    <div class='col-6 text-right' style='padding:0'>
+                        <span style='background: transparent !important; border: none !important' class='form-control'>Número de Serie&nbsp;</span>
+                    </div>
+                    <div class='col-6' style='padding:0'>
+                        <input type="text" id="txtCampo" class="form-control" placeholder="Ingrese Nro. de Serie"
+                               style='width:12rem' maxlength="16" />
+                    </div>
+                </div>
+                <div id='divRepeat'>
+                    <div class='row col-12'>
+                        <div class='col-6 text-right' style='padding:0'>
+                            <span style='background: transparent !important; border: none !important' class='form-control'>Repeat&nbsp;</span>
+                        </div>
+                        <div class='col-6' style='padding:0'>
+                            <input type="text" id="txtRepeat" class="form-control controlNumericoEntero" placeholder="Ingrese Repeat"
+                                   style='width:4rem' maxlength="2" />
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <br />
+            <div class='row' align="center">
+                <div class='offset-4 col-4'>
+                    <button id='btnConsultar' type="button" class='btn btn-primary'
+                            style='border: none !important; font-size: 12px' runat="server" onclick="preLeerNXT()">
+                        Consultar
+                    </button>
+                </div>
+
+            </div>
+            <br />
+            <div id='idAlerta' class='row d-none h-100'>
+                <div id="lblAlerta" class="offset-1 col-10  alert alert-danger text-center align-middle "
+                     role="alert">
+                </div>
+                <br />
+            </div>
+            <div id='wait' class='col-12 d-none' align="center">
+                <div>
+                    <img src="images/wait.gif" width="40px" alt='' />
+                </div>
+                <br />
+            </div>
+
+
+        </div>
+    </div>
+    <div class='row col-12 d-none' id='divDatos'>
+        <br /><br />
+        <div class='offset-2 col-8'>
+            <table style='width:100%'>
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>id Dispositivo:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtDispositivo'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>Estado:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <div style='float:left; width:20%'>
+                            <img id='imgEstado' src='images/iconVerde.png' class='boton_chico' style='margin-top:-3px' width="50" height="50" alt='' />
+                        </div>
+                        <label id='txtTransaccion'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>Parámetros:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtParametros'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>Modelo:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtModelo'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>Marca:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtVendor'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>Version:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtVersion'></label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>Version OS:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtOsRev'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>BooTR:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtBooTR'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>TX (dBmv):&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txttxPwr'></label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>RX (dBmv):&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='rxttxPwr'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>MAC Address:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtcmMacAddr'></label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>MAC Conectada:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtcpeMac'></label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>IP CM Privada:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtcmHost'></label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td style='width:40%' align="right">
+                        <label class='losLabel'>CMTS:&nbsp;&nbsp;</label>
+                    </td>
+                    <td style='width:60%'>
+                        <label id='txtcmtsName'></label>
+                    </td>
+                </tr>
+
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/NXT.js"></script>

@@ -1,0 +1,412 @@
+﻿@font-face {
+    font-family: 'Montserrat';
+    src: url('../Fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: "U+0-10FFFF";
+}
+body{
+    font-family: Montserrat !important;
+    background-color: #767070;
+    margin-bottom: 0 !important;
+}
+.container {
+    width: 100%;
+    max-width: 100% !important;
+    height: 100%;
+}
+.pb-3 {
+    margin-top: 1% !important;
+}
+.titulo {
+    font-size: 2.1rem;
+    color: #FFFFFF;
+}
+.content-menu{
+    padding: 15px;
+}
+.container-header-top{
+    height: 40px;
+}
+.btn-center-vertical {
+    align-items: center;
+    display: flex;
+}
+.btn-custom-header{
+    height: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.item-margin-right{
+    margin-right: 3%;
+}
+.nomDay{
+    color: #fff !important;
+}
+.boton_chico {
+    width: 32px;
+    height: 32px;
+}
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: 13px;
+}
+.boton_grande {
+    width: 48px;
+    height: 48px;
+}
+.select-custom{
+    height: 22px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-right: 10%;
+}
+
+ul, #myUL {
+    list-style-type: none;
+}
+
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+
+    .box::before {
+        content: "\2610";
+        color: #FFFFFF;
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+.check-box::before {
+    content: "\2611";
+    color: dodgerblue;
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.elBorde {
+    /**** Redondeado ****/ /*para Firefox*/
+    -moz-border-radius: 15px 15px 15px 15px !important; /*para Safari y Chrome*/
+    -webkit-border-radius: 15px 15px 15px 15px !important; /* para Opera */
+    border-radius: 8px 8px 8px 8px !important; /********************/
+    /*border: solid 1px #26303E;*/
+}
+
+.elBordeChico {
+    /**** Redondeado ****/ /*para Firefox*/
+    -moz-border-radius: 5px 5px 5px 5px !important; /*para Safari y Chrome*/
+    -webkit-border-radius: 5px 5px 5px 5px !important; /* para Opera */
+    border-radius: 5px 5px 5px 5px !important; /********************/
+    border: solid 1px #26303E;
+}
+
+.elFondo_1 {
+    background: #767070;
+}
+
+.elFondo_2 {
+    background: #91ACD5;
+}
+
+.elFondo_3 {
+    background: #A7A7A7;
+}
+
+.elFondo_4 {
+    background: rgba(52,203,196,0.8);
+}
+
+.elFondo_5 {
+    background: #FDB5CA;
+}
+
+.elDegradado_1 {
+    background: -webkit-linear-gradient(left, #353276, #7698CB); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #353276, #7698CB); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #353276, #7698CB); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #353276, #7698CB); /* Standard syntax */
+}
+
+.elDegradado_2 {
+    background: -webkit-linear-gradient(left, #7698CB, #D6E0EF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #7698CB, #D6E0EF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #7698CB, #D6E0EF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #7698CB, #D6E0EF); /* Standard syntax */
+}
+
+.elDegradado_3 {
+    background: -webkit-linear-gradient(left, #B4B4B4, #676767); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #B4B4B4, #676767); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #B4B4B4, #676767); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to left, #B4B4B4, #676767); /* Standard syntax */
+}
+
+.elDegradado_4 {
+    background: -webkit-linear-gradient(left, #34CBC4, #A9E9E6); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #34CBC4, #A9E9E6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #34CBC4, #A9E9E6); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #34CBC4, #A9E9E6); /* Standard syntax */
+}
+
+.elDegradado_5 {
+    background: -webkit-linear-gradient(left, #FC7AA2, #FED3E0); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #FC7AA2, #FED3E0); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #FC7AA2, #FED3E0); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #FC7AA2, #FED3E0); /* Standard syntax */
+}
+
+.subTitulo_1 {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    padding-left: 10px;
+}
+
+.subTitulo_2 {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    padding-left: 10px;
+}
+
+.subTitulo_3 {
+    font-size: 0.9rem;
+    color: #E9E9E9;
+    padding-left: 10px;
+}
+
+.subTitulo_4 {
+    font-size: 0.9rem;
+    color: #000000;
+    padding-left: 10px;
+}
+
+.subTitulo_5 {
+    font-size: 0.9rem;
+    color: #61031F;
+    padding-left: 10px;
+}
+
+.subTituloReducido_1 {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    padding-left: 10px;
+}
+
+.subTituloReducido_2 {
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    padding-left: 10px;
+}
+
+.subTituloReducido_3 {
+    font-size: 0.9rem;
+    color: #E9E9E9;
+    padding-left: 10px;
+}
+
+.subTituloReducido_4 {
+    font-size: 0.9rem;
+    color: #000000;
+    padding-left: 10px;
+}
+
+.subTituloReducido_5 {
+    font-size: 0.9rem;
+    color: #21010B;
+    padding-left: 10px;
+}
+
+.detalle_combo {
+    font-size: 0.7rem;
+    color: #000000;
+}
+
+.detalle_1 {
+    font-size: 0.7rem;
+    color: #E1E1E1;
+}
+
+.detalle_2 {
+    font-size: 0.7rem;
+    color: #FFFFFF;
+}
+
+.detalle_3 {
+    font-size: 0.7rem;
+    color: #E9E9E9;
+}
+
+.detalle_4 {
+    font-size: 0.7rem;
+    color: #000000;
+}
+
+.detalle_5 {
+    font-size: 0.7rem;
+    color: #21010B;
+}
+
+.detalleTitulo_1 {
+    font-size: 0.8rem;
+    color: #E1E1E1;
+}
+
+.detalleTitulo_2 {
+    font-size: 0.8rem;
+    color: #E1E1E1;
+}
+
+.detalleTitulo_3 {
+    font-size: 0.8rem;
+    color: #E9E9E9;
+}
+
+.detalleTitulo_4 {
+    font-size: 0.8rem;
+    color: #000000;
+}
+
+.detalleTitulo_5 {
+    font-size: 0.8rem;
+    color: #21010B;
+}
+
+.elSidebar_1 {
+    background: #43536A;
+}
+
+.elSidebar_workflow_1 {
+    background: rgba(67, 83, 106, 0.5);
+}
+
+.elSidebar_2 {
+    background: #5680BE;
+}
+
+.elSidebar_workflow_2 {
+    background: rgba(86, 128, 190, 0.5);
+}
+
+.elSidebar_3 {
+    background: #666666;
+}
+
+.elSidebar_workflow_3 {
+    background: rgba(102, 102, 102, 0.5);
+}
+
+.elSidebar_4 {
+    background: rgba(132, 223, 219, 0.5);
+}
+
+.elSidebar_workflow_4 {
+    background: rgba(132, 223, 219, 0.3);
+}
+
+.elSidebar_5 {
+    background: rgba(253, 153, 183, 0.5);
+}
+
+.elSidebar_workflow_5 {
+    background: rgba(253, 153, 183, 0.3);
+}
+
+.submenu_1:hover {
+    background: rgba(38, 48, 62, 0.5);
+    cursor: pointer;
+}
+
+.submenu_2:hover {
+    background: rgba(171, 191, 222, 0.5);
+    cursor: pointer;
+}
+
+.submenu_3:hover {
+    background: rgba(60, 60, 60, 0.5);
+    cursor: pointer;
+}
+
+.submenu_4:hover {
+    background: rgba(50, 194, 187, 0.5);
+    cursor: pointer;
+}
+
+.submenu_5:hover {
+    background: rgba(150, 80, 131, 0.5);
+    cursor: pointer;
+}
+
+.colorIconos_1 {
+    color: #FFFFFF;
+}
+
+.colorIconos_2 {
+    color: #FFFFFF;
+}
+
+.colorIconos_3 {
+    color: #E9E9E9;
+}
+
+.colorIconos_4 {
+    color: #000000;
+}
+
+.colorIconos_5 {
+    color: #000000; /* #E9E9E9; */
+}
+
+.rotateAbajo {
+    transform: rotate(90deg);
+}
+
+.sombra_1 {
+    -webkit-box-shadow: -7px 10px 30px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 10px 30px -6px rgba(0,0,0,0.75);
+    box-shadow: -7px 10px 30px -6px rgba(0,0,0,0.75);
+}
+
+.sombra_header {
+    -webkit-box-shadow: 1px 35px 41px -23px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 35px 41px -23px rgba(0,0,0,0.75);
+    box-shadow: 1px 35px 41px -23px rgba(0,0,0,0.75);
+}
+
+/**** Treeview de Modal ****/
+
+.ul_internet {
+    height: 30px;
+}
+
+.li_internet {
+    padding-left: 16px;
+    height: 30px;
+}
+.div-partial {
+    background-color: #5C616D;
+    color: white;
+    border-radius: 8px;
+}
+.shadow-custom {
+    box-shadow: 0 2px 6px rgba(0,0,0,.15) !important;
+}
+.background-custom{
+    background-color: white !important;
+}
